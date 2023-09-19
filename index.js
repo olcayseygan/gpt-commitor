@@ -28,10 +28,8 @@ try {
   prompt
     .run()
     .then((answer) => {
-      spinner.start("Commiting...");
       execSync(`git commit -m "${answer}"`, { encoding: "utf-8" });
       execSync("git push", { encoding: "utf-8" });
-      spinner.stop();
       console.log("Committed.");
     })
     .catch(console.error);
