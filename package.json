@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "enquirer": "^2.4.1",
-    "openai": "^4.8.0"
+    "openai": "^4.8.0",
+    "ora": "^7.0.1"
   }
 }
