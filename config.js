@@ -14,7 +14,7 @@ if (!fs.existsSync(GPT_COMMITOR_JSON_PATH)) {
         model: "gpt-3.5-turbo",
         temperature: 0,
         max_tokens: 256,
-        systemPrompt: "You generate a very-short commit message based on the following difference which is the most important as a single sentence. Commit message format should be: <type>[scope]: <description>.",
+        systemPrompt: "You generate a very-short commit message based on the following difference which is the most important as a single sentence. Do not put any other comment and new line. Commit message format should be: <type>: <description>.",
       },
       null,
       2

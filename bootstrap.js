@@ -17,7 +17,7 @@ if (!("apikey" in json)) {
     apikey = answer.api_key;
   } catch {}
 
-  if (json.apikey === "") {
+  if (apikey === "") {
     console.error("You must give an api key to go next.");
     process.exit(1);
   }

@@ -129,4 +129,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.gpt-committor.json
+.gpt-commitor.json
