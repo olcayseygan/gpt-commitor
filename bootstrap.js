@@ -1,9 +1,9 @@
 import enquirer from "enquirer";
 import fs from "fs";
 import path from "path";
-import { WORKING_DIRECTORY } from "./config.js";
+import { HOME_DIRECTORY } from "./config.js";
 
-const GPT_COMMITOR_JSON_PATH = path.join(WORKING_DIRECTORY, ".gpt-commitor.json");
+const GPT_COMMITOR_JSON_PATH = path.join(HOME_DIRECTORY, ".gpt-commitor.json");
 const json = JSON.parse(fs.readFileSync(GPT_COMMITOR_JSON_PATH).toString());
 if (!("apikey" in json)) {
   var apikey = "";

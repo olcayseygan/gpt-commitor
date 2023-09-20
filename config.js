@@ -1,8 +1,10 @@
 import fs from "fs";
+import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 
 export const WORKING_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
+export const HOME_DIRECTORY = os.homedir();
 export const COMMAND = 'git diff --cached -U0 | findstr -r "^[+-]" | findstr -v "^---"';
 
 export const MODEL = "gpt-3.5-turbo";
@@ -14,7 +16,7 @@ Do not put any other comment and new line.
 Commit message format should be: <type>: <description>.
 `;
 
-const GPT_COMMITOR_JSON_PATH = path.join(WORKING_DIRECTORY, ".gpt-commitor.json");
+const GPT_COMMITOR_JSON_PATH = path.join(HOME_DIRECTORY, ".gpt-commitor.json");
 if (!fs.existsSync(GPT_COMMITOR_JSON_PATH)) {
   fs.writeFileSync(GPT_COMMITOR_JSON_PATH, JSON.stringify({}, null, 2));
 }
