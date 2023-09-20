@@ -17,7 +17,7 @@ try {
     console.log("You have no staged file in your git directory.");
     process.exit(1);
   }
-  const messages = (await fecthMessages(gitDiff.substring(0, 2000))).split("\n").map((message) => message.substring(4).trim());
+  const messages = (await fecthMessages(gitDiff.substring(0, 2000))).split("\n").map((message) => message.trim());
   spinner.stop();
 
   const prompt = new enquirer.Select({

@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { OPENAI } from "./config.js";
+import { MAX_TOKENS, MODEL, OPENAI, SYSTEM_PROMPT, TEMPERATURE } from "./config.js";
 
 var openai = null;
 
@@ -11,11 +11,11 @@ export default async function fecthMessages(gitDiff) {
   }
 
   const completion = await openai.chat.completions.create({
-    model: OPENAI.model,
-    max_tokens: OPENAI.max_tokens,
-    temperature: OPENAI.temperature,
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    temperature: TEMPERATURE,
     messages: [
-      { role: "system", content: OPENAI.systemPrompt },
+      { role: "system", content: SYSTEM_PROMPT },
       { role: "user", content: gitDiff },
     ],
   });
