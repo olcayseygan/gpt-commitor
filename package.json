@@ -1,18 +1,28 @@
 {
-  "name": "gpt-commitor",
-  "version": "1.0.0",
-  "description": "An intelligent commit bot powered by ChatGPT",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "run": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Olcay Seygan",
-  "license": "ISC",
   "dependencies": {
     "enquirer": "^2.4.1",
     "openai": "^4.8.0",
     "ora": "^7.0.1"
-  }
+  },
+  "description": "An intelligent commit bot powered by ChatGPT",
+  "homepage": "https://github.com/olcayseygan/gpt-commitor.git",
+  "keywords": [
+    "commit",
+    "gpt",
+    "chatgpt",
+    "openai"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gpt-commitor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olcayseygan/gpt-commitor.git"
+  },
+  "scripts": {
+    "run": "node index.js"
+  },
+  "type": "module",
+  "version": "1.0.0"
 }
