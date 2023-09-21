@@ -3,7 +3,7 @@ import { execSync } from "child_process";
 import enquirer from "enquirer";
 import ora from "ora";
 import "./bootstrap.js";
-import { COMMAND } from "./config.js";
+import { GIT_COMMIT_COMMAND, GIT_DIFF_COMMAND, GIT_PUSH_COMMAND } from "./config.js";
 import fecthMessages from "./openai.js";
 
 try {
@@ -11,7 +11,7 @@ try {
   spinner.start("Getting commit messages from OpenAI...");
   var gitDiff = "";
   try {
-    gitDiff = execSync(COMMAND, { encoding: "utf-8" }).toString();
+    gitDiff = execSync(GIT_DIFF_COMMAND, { encoding: "utf-8" }).toString();
   } catch {
     spinner.stop();
     console.log("You have no staged file in your git directory.");
@@ -29,8 +29,8 @@ try {
   prompt
     .run()
     .then((answer) => {
-      execSync(`git commit -m "${answer}"`, { encoding: "utf-8" });
-      execSync("git push", { encoding: "utf-8" });
+      execSync(GIT_COMMIT_COMMAND.replace("{0}", answer), { encoding: "utf-8" });
+      execSync(GIT_PUSH_COMMAND, { encoding: "utf-8" });
       console.log("Committed.");
     })
     .catch(console.error);
